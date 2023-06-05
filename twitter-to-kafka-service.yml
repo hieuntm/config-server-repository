@@ -1,3 +1,8 @@
+logging:
+  level:
+    ROOT: DEBUG
+    org.spring.framework.cloud.config: DEBUG
+
 twitter-to-kafka-service:
   twitter-keywords:
     - Java
@@ -5,10 +10,13 @@ twitter-to-kafka-service:
     - Kafka
     - Elasticsearch
   welcome-message: Hello microservices!
-  enable-mock-tweets: false
+  enable-mock-tweets: true
   mock-min-tweet-length: 5
   mock-max-tweet-length: 15
   mock-sleep-ms: 10000
+  twitter-v2-base-url: https://api.twitter.com/2/tweets/search/stream?tweet.fields=created_at&expansions=author_id
+  twitter-v2-rules-base-url: https://api.twitter.com/2/tweets/search/stream/rules
+  twitter-v2-bearer-token: AAAAAAAAAAAAAAAAAAAAABuEnwEAAAAAhr91Gv4%2FwPw2GkBqYLP%2BD57MBZ8%3DxTGejvdzcQrWoaNrC07T9xraUdwRc7MI4MndKU8T1gnkmmKCdh
 
 retry-config:
   initial-interval-ms: 1000
