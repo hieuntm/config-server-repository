@@ -5,31 +5,31 @@ kafka-config:
   topic-name: twitter-topic
   schema-registry-url: http://localhost:8081
 retry-config:
-  max-interval-ms: '10000'
-  maxAttempts: '3'
-  initial-interval-ms: '1000'
-  sleep-time-ms: '2000'
-  multiplier: '2.0'
+  max-interval-ms: 10000
+  maxAttempts: 3
+  initial-interval-ms: 1000
+  sleep-time-ms: 2000
+  multiplier: 2.0
 kafka-consumer-config:
   consumer-group-id: twitter-topic-consumer
-  session-timeout-ms: '10000'
-  max-partition-fetch-bytes-default: '1048576'
-  max-partition-fetch-bytes-boost-factor: '1'
+  session-timeout-ms: 10000
+  max-partition-fetch-bytes-default: 1048576
+  max-partition-fetch-bytes-boost-factor: 1
   auto-offset-reset: earliest
-  batch-listener: 'true'
+  batch-listener: true
   specific-avro-reader-key: specific.avro.reader
   value-deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
   key-deserializer: org.apache.kafka.common.serialization.LongDeserializer
-  max-poll-interval-ms: '300000'
-  poll-timeout-ms: '150'
-  heartbeat-interval-ms: '3000'
-  auto-startup: 'false'
-  max-poll-records: '500'
-  specific-avro-reader: 'true'
-  concurrency-level: '3'
+  max-poll-interval-ms: 300000
+  poll-timeout-ms: 150
+  heartbeat-interval-ms: 3000
+  auto-startup: false
+  max-poll-records: 500
+  specific-avro-reader: true
+  concurrency-level: 3
 server:
-  port: '8182'
+  port: 8182
 spring:
   cloud:
     compatibility-verifier:
-      enabled: 'false'
+      enabled: false
