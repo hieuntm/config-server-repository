@@ -6,7 +6,6 @@ kafka-config:
   topic-name: twitter-topic
   schema-registry-url: http://localhost:8081
   replication-factor: '3'
-
 kafka-producer-config:
   batch-size-boost-factor: '100'
   linger-ms: '5'
@@ -17,14 +16,19 @@ kafka-producer-config:
   key-serializer-class: org.apache.kafka.common.serialization.LongSerializer
   compression-type: snappy
   acks: all
-
+twitter-to-kafka-service:
+  mock-min-tweet-length: '5'
+  welcome-message: Hello microservices!
+  enable-mock-tweets: 'true'
+  twitter-keywords: Java, Microservices, Kafka, Elasticsearch
+  mock-max-tweet-length: '15'
+  mock-sleep-ms: '10000'
 retry-config:
   max-interval-ms: '10000'
   max-attempts: '3'
   initial-interval-ms: '1000'
   sleep-time-ms: '2000'
   multiplier: '2.0'
-
 kafka-consumer-config:
   consumer-group-id: twitter-topic-consumer
   session-timeout-ms: '10000'
@@ -42,6 +46,5 @@ kafka-consumer-config:
   max-poll-records: '500'
   specific-avro-reader: 'true'
   concurrency-level: '3'
-
 server:
   port: '8181'
